@@ -36,10 +36,10 @@ class BinarySearchTree<T: Comparable<T>> {
         var cur = this.root
         while(cur != null) {
             val compare = seek.compareTo(cur.data)
-            when(compare) {
-                0 -> cur
-                1 -> { cur = cur.right }
-                else -> {cur = cur.left }
+            cur = when (compare) {
+                0 -> return cur
+                1 -> cur.right
+                else -> cur.left
             }
         }
         return cur
