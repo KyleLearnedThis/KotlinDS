@@ -56,6 +56,18 @@ class BinarySearchTree<T: Comparable<T>> {
         printInOrderWork(node.left)
         print("[${node.data}] ")
         printInOrderWork(node.right)
+    }
 
+    fun printPostOrder() {
+        printPostOrderWork(root)
+    }
+
+    private fun printPostOrderWork(node: TreeNode<T>?) {
+        if(node == null) {
+            return
+        }
+        printInOrderWork(node.left)
+        printInOrderWork(node.right)
+        print("[${node.data}] ")
     }
 }
