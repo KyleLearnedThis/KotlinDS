@@ -45,9 +45,7 @@ class BinarySearchTree<T: Comparable<T>> {
         return cur
     }
 
-    fun printInOrder() {
-       printInOrderWork(root)
-    }
+    fun printInOrder() = printInOrderWork(root)
 
     private fun printInOrderWork(node: TreeNode<T>?) {
         if(node == null) {
@@ -58,9 +56,7 @@ class BinarySearchTree<T: Comparable<T>> {
         printInOrderWork(node.right)
     }
 
-    fun printPostOrder() {
-        printPostOrderWork(root)
-    }
+    fun printPostOrder() = printPostOrderWork(root)
 
     private fun printPostOrderWork(node: TreeNode<T>?) {
         if(node == null) {
