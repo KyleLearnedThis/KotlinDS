@@ -6,6 +6,22 @@ import java.util.*
 class SortingTest {
 
     @Test
+    fun testInsertionSortBasic() {
+        val input = intArrayOf(5,4,3,1,2,6,8,7,10,9)
+        val sorter = InsertionSort(input)
+        sorter.sort()
+        println(Arrays.toString(input))
+    }
+
+    @Test
+    fun testBubbleSortBasic() {
+        val input = intArrayOf(5,4,3,1,2,6,8,7,10,9)
+        val sorter = BubbleSort(input)
+        sorter.sort()
+        println(Arrays.toString(input))
+    }
+
+    @Test
     fun testHeapSortBasic() {
         val input = intArrayOf(5,4,3,1,2,6,8,7,10,9)
         val sorter = HeapSort(input)
@@ -25,14 +41,6 @@ class SortingTest {
     fun testQuickSortBasic() {
         val input = intArrayOf(5,4,3,1,2,6,8,7,10,9)
         val sorter = QuickSort(input)
-        sorter.sort()
-        println(Arrays.toString(input))
-    }
-
-    @Test
-    fun testInsertionSortBasic() {
-        val input = intArrayOf(5,4,3,1,2,6,8,7,10,9)
-        val sorter = InsertionSort(input)
         sorter.sort()
         println(Arrays.toString(input))
     }

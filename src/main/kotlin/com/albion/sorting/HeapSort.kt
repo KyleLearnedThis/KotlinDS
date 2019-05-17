@@ -1,7 +1,7 @@
 package com.albion.sorting
 
 
-class HeapSort(override var input: IntArray) : BaseSort(input = input) {
+class HeapSort(override var input: IntArray) : BaseSort(input) {
     fun sort() {
         val n = input.size
         // Build heap (rearrange array)
