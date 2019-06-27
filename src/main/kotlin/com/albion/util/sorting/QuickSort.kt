@@ -1,4 +1,4 @@
-package com.albion.sorting
+package com.albion.util.sorting
 
 class QuickSort(override var input: IntArray): BaseSort(input) {
 

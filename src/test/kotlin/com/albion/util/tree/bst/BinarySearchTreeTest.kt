@@ -1,4 +1,4 @@
-package com.albion.tree.bst
+package com.albion.util.tree.bst
 
 import org.junit.Assert
 import org.junit.Test

@@ -1,4 +1,4 @@
-package com.albion.sorting
+package com.albion.util.sorting
 
 class BubbleSort(override var input: IntArray) : BaseSort(input) {
     fun sort() {
