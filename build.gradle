@@ -10,7 +10,7 @@ buildscript {
 }
 
 group 'com.albion.labs'
-version '1.0.2'
+version '1.0.3-SNAPSHOT'
 
 apply plugin: 'kotlin'
 
