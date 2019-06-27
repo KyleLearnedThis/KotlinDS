@@ -1,4 +1,4 @@
-package com.albion.list
+package com.albion.util.list
 
 import org.junit.Assert
 import org.junit.Test

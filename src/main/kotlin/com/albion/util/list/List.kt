@@ -1,4 +1,4 @@
-package com.albion.list
+package com.albion.util.list
 
 class List<T> {
     var head: ListNode<T>? = null

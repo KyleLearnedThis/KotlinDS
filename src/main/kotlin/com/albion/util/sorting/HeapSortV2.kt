@@ -1,4 +1,4 @@
-package com.albion.sorting
+package com.albion.util.sorting
 
 import java.util.*
 

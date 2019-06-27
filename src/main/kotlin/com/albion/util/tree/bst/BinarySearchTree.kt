@@ -1,4 +1,4 @@
-package com.albion.tree.bst
+package com.albion.util.tree.bst
 
 class BinarySearchTree<T: Comparable<T>> {
     var root: TreeNode<T>? = null
