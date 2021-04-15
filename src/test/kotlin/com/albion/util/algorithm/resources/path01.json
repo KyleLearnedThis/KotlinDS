@@ -1,0 +1,35 @@
+{
+  "vertices": [
+    {
+      "id": "San Francisco",
+      "edges": [
+        {
+          "id": "New York",
+          "weight": 2902
+        },
+        {
+          "id": "Los Angeles",
+          "weight": 381
+        }
+      ]
+    },
+    {
+      "id": "Los Angeles",
+      "edges": [
+        {
+          "id": "San Francisco",
+          "weight": 381
+        }
+      ]
+    },
+    {
+      "id": "New York",
+      "edges": [
+        {
+          "id": "San Francisco",
+          "weight": 2902
+        }
+      ]
+    }
+  ]
+}
