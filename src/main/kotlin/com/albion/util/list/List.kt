@@ -1,10 +1,10 @@
 package com.albion.util.list
 
-class List<T> {
+class List<T>(input: Array<T>) {
     var head: ListNode<T>? = null
     var tail: ListNode<T>? = null
 
-    constructor(input: Array<T>) {
+    init {
         for(i in input){
             append(i)
         }
@@ -47,7 +47,7 @@ class List<T> {
         var cur = head
         while(cur != null) {
             size++
-            cur = cur?.next
+            cur = cur.next
         }
         return size
     }

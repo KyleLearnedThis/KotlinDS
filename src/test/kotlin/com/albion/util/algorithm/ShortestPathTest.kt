@@ -1,12 +1,13 @@
 package com.albion.util.algorithm
 
+import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 
 
 internal class ShortestPathTest {
 
-    lateinit var shortestPath: ShortestPath
+    private lateinit var shortestPath: ShortestPath
 
     @Before
     fun init() {
@@ -16,5 +17,9 @@ internal class ShortestPathTest {
     @Test
     fun testBasic() {
         shortestPath.openFile("path02.json")
+        val result = shortestPath.findShortestPath("San Francisco", "London")
+        val expectedCost = 6537
+        val actualCost = result.last()?.cost
+        Assert.assertEquals(expectedCost, actualCost)
     }
 }
