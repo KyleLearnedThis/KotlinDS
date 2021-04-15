@@ -2,17 +2,17 @@ package com.albion.util.algorithm
 
 import com.albion.util.graph.Graph
 import com.albion.util.graph.Vertex
-import java.util.*
+import java.util.PriorityQueue
 
 class ShortestPath {
-    lateinit var graph: Graph
+    private lateinit var graph: Graph
 
     fun openFile(name: String) {
         graph = Graph(name)
     }
 
     private fun initializeGraph(source: String) {
-        graph.map.forEach{
+        graph.verticesMap.forEach{
             val id = it.key
             val vertex = it.value
             if(id == source) {
@@ -26,7 +26,7 @@ class ShortestPath {
     fun findShortestPath(source: String, destination: String): MutableList<Vertex?> {
         initializeGraph(source)
         val queue: PriorityQueue<Vertex> = PriorityQueue { o1: Vertex, o2: Vertex -> o1.cost - o2.cost }
-        graph.map.forEach{
+        graph.verticesMap.forEach{
             val vertex = it.value
             queue.add(vertex)
         }
@@ -40,7 +40,7 @@ class ShortestPath {
                 val edgeId = edge.id
                 val weight = edge.weight
                 val alt = cost + weight
-                val v = graph.map[edgeId]!!
+                val v = graph.verticesMap[edgeId]!!
 
                 val neighborWeight = v.cost
                 if(alt < neighborWeight) {
@@ -61,10 +61,10 @@ class ShortestPath {
 
     private fun generatePath(destination: String): MutableList<Vertex?> {
         val result= mutableListOf<Vertex?>()
-        var v = graph.map[destination]
+        var v = graph.verticesMap[destination]
         do {
             result.add(0, v)
-            v = v?.previous
+             v = v?.previous
         } while(v != null)
 
         result.forEach {
