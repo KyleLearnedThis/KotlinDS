@@ -10,6 +10,10 @@
         {
           "id": "Los Angeles",
           "weight": 381
+        },
+        {
+          "id": "Boston",
+          "weight": 3108
         }
       ]
     },
@@ -28,6 +32,28 @@
         {
           "id": "San Francisco",
           "weight": 2902
+        },
+        {
+          "id": "London",
+          "weight": 3635
+        }
+      ]
+    },
+    {
+      "id": "Boston",
+      "edges": [
+        {
+          "id": "San Francisco",
+          "weight": 3108
+        }
+      ]
+    },
+    {
+      "id": "London",
+      "edges": [
+        {
+          "id": "New York",
+          "weight": 3635
         }
       ]
     }

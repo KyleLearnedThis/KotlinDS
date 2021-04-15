@@ -11,7 +11,6 @@ class Graph(inputName: String) {
 
     private fun openFile(file: String) {
         val base = File("./")
-        println("===== absolute path: [${base.absolutePath}] =====")
         val relativePath = "src/test/kotlin/com/albion/util/algorithm/resources/"
         val absoluteDirectoryPath = base.absolutePath + File.separator + relativePath
         val text = File(absoluteDirectoryPath, file).readText(Charsets.UTF_8)
