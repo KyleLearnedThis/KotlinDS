@@ -1,4 +1,4 @@
-package com.albion.util.algorithm
+package com.albion.util.algorithm.graphs
 
 import org.junit.Assert
 import org.junit.Before
@@ -19,7 +19,7 @@ internal class ShortestPathTest {
         shortestPath.openFile("path02.json")
         val result = shortestPath.findShortestPath("San Francisco", "London")
         val expectedCost = 6537
-        val actualCost = result.last()?.cost
+        val actualCost = result.last().cost
         Assert.assertEquals(expectedCost, actualCost)
     }
 }

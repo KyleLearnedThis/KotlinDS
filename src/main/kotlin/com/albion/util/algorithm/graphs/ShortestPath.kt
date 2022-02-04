@@ -1,4 +1,4 @@
-package com.albion.util.algorithm
+package com.albion.util.algorithm.graphs
 
 import com.albion.util.graph.Graph
 import com.albion.util.graph.Vertex
@@ -15,15 +15,15 @@ class ShortestPath {
         graph.verticesMap.forEach{
             val id = it.key
             val vertex = it.value
-            if(id == source) {
-                vertex.cost = 0
+            vertex.cost = if(id == source) {
+                 0
             } else {
-                vertex.cost = Int.MAX_VALUE
+                Int.MAX_VALUE
             }
         }
     }
 
-    fun findShortestPath(source: String, destination: String): MutableList<Vertex?> {
+    fun findShortestPath(source: String, destination: String): MutableList<Vertex> {
         initializeGraph(source)
         val queue: PriorityQueue<Vertex> = PriorityQueue { o1: Vertex, o2: Vertex -> o1.cost - o2.cost }
         graph.verticesMap.forEach{
@@ -59,18 +59,17 @@ class ShortestPath {
         queue.add(vertex)
     }
 
-    private fun generatePath(destination: String): MutableList<Vertex?> {
-        val result= mutableListOf<Vertex?>()
-        var v = graph.verticesMap[destination]
+    private fun generatePath(destination: String): MutableList<Vertex> {
+        val result= mutableListOf<Vertex>()
+        var v: Vertex? = graph.verticesMap[destination]
         do {
-            result.add(0, v)
-             v = v?.previous
+            result.add(0, v!!)
+            v = v.previous
         } while(v != null)
 
         result.forEach {
-            println("===== [id]: [${it?.id}] [cost]: [${it?.cost}] =====")
+            println("===== [id]: [${it.id}] [cost]: [${it.cost}] =====")
         }
-
         return  result
     }
 }
