@@ -15,10 +15,12 @@ class Graph(inputName: String) {
         val absoluteDirectoryPath = base.absolutePath + File.separator + relativePath
         val text = File(absoluteDirectoryPath, file).readText(Charsets.UTF_8)
         val gson = Gson()
-        gson.fromJson(text, Vertices::class.java).vertices.forEach{
-            val id = it.id
-            verticesMap[id] = it
-        }
+        gson.fromJson(text, Vertices::class.java)
+                .vertices
+                .forEach{
+                    val id = it.id
+                    verticesMap[id] = it
+                }
     }
 
     fun bfs(source: String, target: String): Vertex? {
